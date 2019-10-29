@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .numberContainer {
+            width: 57px;
+            position: absolute;
+            border: 1px solid #b7bbbf;
+            text-align: center;
+            display: inline-block;
+            background: #e9ecef;
+            align-items: center;
+            padding: 5px;
+            margin-right: 8px;
+            top:310px;
+            border-radius: .25rem;
+        }
+        #arrayContainer{
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div  style="padding: 5px 50px">
+    <div class="input-group mb-3" style="width: 50%; padding: 10px 0px;margin-bottom: 0rem!important;">
+        <input type="text" class="form-control" id="inputArray" placeholder="Введите сюда числа через запятую">
+    </div>
+    <button id="paint_btn" type="button" onclick="sortInstance.displayArray()" class="btn btn-primary btn-sm">Отрисовать</button>
+    <button id="start_btn" type="button" onclick="sortInstance.startSort()" class="btn btn-primary btn-sm">Начать сортировку</button>
+    <button id="generate_btn" type="button" onclick="sortInstance.generateArray()" class="btn btn-primary btn-sm">Сгенерировать</button>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter"> Инфо </button>
+    <button type="button" onclick="sortInstance.reset()" class="btn btn-danger btn-sm">Сбросить</button>
+
+    <div class="input-group-prepend" style="margin-top: 6px">
+        <label >&nbsp;Скорость анимации &nbsp;</label>
+    </div>
+    <select class="form-control form-control-sm" id="speedAnimation" style="width: 70px; ">
+        <option selected>1x</option>
+        <option value="1">1.5x</option>
+        <option value="2">2x</option>
+        <option value="2">3x</option>
+    </select>
+
+    <div id="fieldAnimation">
+        <div id="arrayContainer"></div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Инструкция</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>На вход подаются целые числа и числа с плавающей запятой.</p>
+                <p>Требования к данным: числа от 0 до 9999, не более 1 знака после запятой.</p>
+                <p>Введите в такое поле числа через запятую  <input type="text" style=" width:50%" class="form-control" placeholder="Например: 21,56,87,11,12.2"></p>
+                <p>После чего нажмите  <button type="button" class="btn btn-primary btn-sm">Отрисовать</button> и <button type="button" class="btn btn-primary btn-sm">Начать сортировку</button></p>
+                <p>Для того, чтобы сгенерировать числа случайным образом нажмите      <button  type="button" class="btn btn-primary btn-sm">Сгенерировать</button></p>
+                <p>В выпадающем меню можно выбрать скорость анимации
+                    <select class="form-control form-control-sm" style="width: 70px; ">
+                    <option selected>1x</option>
+                    <option value="1">1.5x</option>
+                    <option value="2">2x</option>
+                    <option value="2">3x</option>
+                </select>
+                </p>
+                <p>Для того, чтобы сбросить всё (остановить анимацию, удалить отрисованный массив) нажмите      <button type="button" class="btn btn-danger btn-sm">Сбросить</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
